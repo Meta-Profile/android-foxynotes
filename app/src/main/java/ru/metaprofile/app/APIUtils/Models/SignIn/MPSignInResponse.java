@@ -8,8 +8,4 @@ public class MPSignInResponse extends MPControllerResponse {
     public SignInResponse getResponse() {
         return response;
     }
-
-    public void setResponse(SignInResponse response) {
-        this.response = response;
-    }
 }

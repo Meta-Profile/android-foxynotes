@@ -15,6 +15,7 @@ public class SignInResponse {
     private String userId;
     private String username;
     private String email;
+    private String metaId;
     @Nullable
     private Object avatar;
 
@@ -56,6 +57,14 @@ public class SignInResponse {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMetaId() {
+        return metaId;
+    }
+
+    public void setMetaId(String metaId) {
+        this.metaId = metaId;
     }
 
     @Nullable

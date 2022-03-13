@@ -1,4 +1,4 @@
-package ru.metaprofile.app.APIUtils;
+package ru.metaprofile.app.APIUtils.Api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,7 +26,7 @@ public class JSONUtils {
             return (T) mapper.readValue(jsonString, clazz);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new MPAPIBadResponseException();
+            throw new MPAPIBadResponseException(jsonString);
         }
     }
 

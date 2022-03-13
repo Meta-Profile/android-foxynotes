@@ -1,5 +1,6 @@
 package ru.metaprofile.app;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.Objects;
 
-import ru.metaprofile.app.APIUtils.APIUtils;
+import ru.metaprofile.app.APIUtils.Api.APIUtils;
 import ru.metaprofile.app.MetaCache.TokenCache;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
                             tokenMeta = ApiUtils.signIn(mp_id_input.getText().toString(), mp_password_input.getText().toString()).getToken();
                             TokenCache cacheToken = new TokenCache();
                             cacheToken.setToken(tokenMeta);
-//                            Intent i;
-//                            i = new Intent(this, TestGetMe.class);
-//                            startActivity(i);
+
+                            if(tokenMeta != null){
+                                goToActivity(TestGetMe.class);
+                            }
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -53,9 +55,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-
         });
     }
 
-
+    public void goToActivity(Class clazz){
+        if(tokenMeta != null){
+            Intent intent = new Intent(this, clazz);
+            intent.putExtra("token", tokenMeta);
+            startActivity(intent);
+        }
+    }
 }
