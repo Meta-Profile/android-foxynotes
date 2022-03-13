@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">android-metaprofile</string>
+    <!-- Strings related to login -->
+    <string name="meta_id_placeholder">Meta ID</string>
+    <string name="meta_password_placeholder">Password</string>
+    <string name="mp_login_button_string">login</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="meta_id_placeholder">Meta ID</string>
+    <string name="mp_login_button_string">login</string>
+</resources>
